@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/20 13:14:53 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/21 15:06:45 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "lib/printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 //colours
 
@@ -29,6 +30,15 @@
 
 typedef struct s_node
 {
+	struct s_node	*next;
 }	t_node;
+
+//parsing
+t_node	parsing1(t_node *a_list, int argc, char **argv);
+char	**parsing2(int argc, char **argv);
+char	**parsing3(int argc, char **argv);
+
+//help
+int		counting_size(int argc, char **argv);
 
 #endif

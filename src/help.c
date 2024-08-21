@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   help.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 10:00:45 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/21 15:26:24 by ymauk            ###   ########.fr       */
+/*   Created: 2024/08/21 12:19:09 by ymauk             #+#    #+#             */
+/*   Updated: 2024/08/21 14:51:51 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(int argc, char **argv)
+int	counting_size(int argc, char **argv)
 {
-	t_node	*a_list;
-	t_node	*b_list;
+	int		counter;
+	int		i;
+	char	**split;
 
-	a_list = NULL;
-	b_list = NULL;
-	if (argc <= 1)
-		return (ft_printf("%sWrong amount of arguments!\n%s", R, DC));
-	parsing1(a_list, argc, argv);
-	return (0);
+	argc = 0;
+	counter = 0;
+	i = 0;
+	split = ft_split(argv[1], ' ');
+	while (split[i] != NULL)
+	{
+		i++;
+		counter++;
+	}
+	free (split);
+	return (counter);
 }
