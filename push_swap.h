@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/21 15:06:45 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/23 12:54:21 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,20 @@ typedef struct s_node
 }	t_node;
 
 //parsing
-t_node	parsing1(t_node *a_list, int argc, char **argv);
-char	**parsing2(int argc, char **argv);
+void	parsing1(t_node *a_list, int argc, char **argv);
+char	**parsing2(char **argv, int size);
 char	**parsing3(int argc, char **argv);
+int		allocate_and_copy(char **split_string, char **temp_split, int j);
 
 //help
 int		counting_size(int argc, char **argv);
+
+//checking_string
+void	check_string(char **string);
+void	no_ints(char **str);
+void	duplicates(char **str);
+
+//error_handling
+void	error_handling(char **str);
 
 #endif

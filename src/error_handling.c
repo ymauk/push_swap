@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 10:00:45 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 10:40:18 by ymauk            ###   ########.fr       */
+/*   Created: 2024/08/23 09:46:09 by ymauk             #+#    #+#             */
+/*   Updated: 2024/08/23 12:46:54 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(int argc, char **argv)
-{
-	t_node	*a_list;
-	t_node	*b_list;
+//free funktion die alles bisher erbrachte freed
+//inklusive exit welche die Funktion beendet
 
-	a_list = NULL;
-	b_list = NULL;
-	if (argc <= 1)
-		return (ft_printf("%sWrong amount of arguments!\n%s", R, DC));
-	parsing1(a_list, argc, argv);
-	return (0);
+void	error_handling(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
+	free (str);
+	ft_printf("%sWrong arguments!\n%s", R, DC);
+	exit (0);
 }
