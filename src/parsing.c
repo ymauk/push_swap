@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:42:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 12:47:13 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/23 17:14:42 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,34 @@ char	**parsing2(char **argv, int size)
 	return (split_string);
 }
 
+t_node	*create_list(char **str, t_node *a_list)
+{
+	int		*nbr;
+	t_node	*new_node;
+	int		i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		nbr = (int *)malloc(sizeof(int));
+		*nbr = ft_atoi(str[i]);
+		new_node = ft_lstnew_ps(nbr);
+		free (nbr);
+		if (new_node)
+			ft_lstadd_back_ps(&a_list, new_node);
+		i++;
+	}
+	free (str);
+	return (a_list);
+}
+
 // if (argc == 2 && ft_strchr(argv[1], ' ') -> is used if argument is in ""
 // else if (argc > 2)               -> is used by multiple singel arguments
 
-void	parsing1(t_node *a_list, int argc, char **argv)
+t_node	*parsing1(t_node *a_list, int argc, char **argv)
 {
 	char	**string;
 	int		size;
-	a_list = NULL;
 
 	size = counting_size(argc, argv);
 	if (argc == 2 && ft_strchr(argv[1], ' ') != NULL)
@@ -91,5 +111,5 @@ void	parsing1(t_node *a_list, int argc, char **argv)
 	else
 		exit(0);
 	check_string(string);
-	// return (*a_list);
+	return (create_list(string, a_list));
 }

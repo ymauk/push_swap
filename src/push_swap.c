@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:00:45 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 10:40:18 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/23 17:28:20 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int	main(int argc, char **argv)
 	b_list = NULL;
 	if (argc <= 1)
 		return (ft_printf("%sWrong amount of arguments!\n%s", R, DC));
-	parsing1(a_list, argc, argv);
+	a_list = parsing1(a_list, argc, argv);
+	while (a_list != NULL)
+    {
+        printf("list: %d\n", a_list->content);  // Gib den Inhalt des Knotens aus
+        a_list = a_list->next;  // Gehe zum nächsten Knoten über
+    }
 	return (0);
 }

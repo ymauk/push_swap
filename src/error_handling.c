@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:46:09 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 12:46:54 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/23 14:33:47 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	error_handling(char **str)
 		i++;
 	}
 	free (str);
-	ft_printf("%sWrong arguments!\n%s", R, DC);
+	ft_printf("%sError\n%s", R, DC);
 	exit (0);
 }

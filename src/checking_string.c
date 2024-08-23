@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:49:17 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 14:22:55 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/23 17:28:02 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	size_int(char **str)
 	while (str[i] != NULL)
 	{
 		nbr = ft_atol(str[i]);
-		printf("%ld\n", nbr);
 		if (nbr < INT_MIN || nbr > INT_MAX)
 			error_handling(str);
 		i++;
