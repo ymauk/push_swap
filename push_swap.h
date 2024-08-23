@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 12:54:21 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/23 14:20:02 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "lib/printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include <stdio.h>
 
 //colours
@@ -41,11 +42,13 @@ int		allocate_and_copy(char **split_string, char **temp_split, int j);
 
 //help
 int		counting_size(int argc, char **argv);
+long	ft_atol(const char *str);
 
 //checking_string
 void	check_string(char **string);
 void	no_ints(char **str);
 void	duplicates(char **str);
+void	size_int(char **str);
 
 //error_handling
 void	error_handling(char **str);

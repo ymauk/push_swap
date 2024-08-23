@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:49:17 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 13:04:27 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/23 14:22:55 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 void	check_string(char **string)
 {
-	// printf("%s\n", string[0]);
-	// printf("%s\n", string[1]);
-	// printf("%s\n", string[2]);
-	// printf("%s\n", string[3]);
-	// printf("%s\n", string[4]);
-	// printf("%s\n", string[5]);
-	// no_ints(string);
+	no_ints(string);
 	duplicates(string);
-	// size_ints(string);
+	size_int(string);
 }
 
 void	no_ints(char **str)
@@ -69,6 +63,22 @@ void	duplicates(char **str)
 				error_handling(str);
 			j++;
 		}
+		i++;
+	}
+}
+
+void	size_int(char **str)
+{
+	int		i;
+	long	nbr;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		nbr = ft_atol(str[i]);
+		printf("%ld\n", nbr);
+		if (nbr < INT_MIN || nbr > INT_MAX)
+			error_handling(str);
 		i++;
 	}
 }
