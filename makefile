@@ -1,6 +1,7 @@
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
-SRC = src/push_swap.c src/parsing.c src/help.c src/error_handling.c src/checking_string.c src/help_node.c
+SRC = src/push_swap.c src/parsing.c src/help.c src/error_handling.c src/checking_string.c src/help_node.c src/operations.c src/operations2.c \
+		src/operations3.c
 OBJS = $(SRC:.c=.o)
 LIBFT = lib/Libft
 PRINTF = lib/printf

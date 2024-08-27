@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 17:26:23 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/27 18:27:58 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 typedef struct s_node
 {
-	int				content;
+	int				data;
 	struct s_node	*next;
 }	t_node;
 
@@ -49,6 +49,8 @@ long	ft_atol(const char *str);
 //help_node
 void	ft_lstadd_back_ps(t_node **lst, t_node *new);
 t_node	*ft_lstnew_ps(int *content);
+int		ft_lstsize_ps(t_node *lst);
+void	ft_lstadd_front_ps(t_node **lst, t_node *new);
 
 //checking_string
 void	check_string(char **string);
@@ -58,5 +60,18 @@ void	size_int(char **str);
 
 //error_handling
 void	error_handling(char **str);
+
+//operations
+void	sa(t_node **a_list);
+void	sb(t_node **b_list);
+void	ss(t_node **a_list, t_node **b_list);
+void	pa(t_node **to_a, t_node **from_b);
+void	pb(t_node **to_b, t_node **from_a);
+
+//operations2
+void	ra(t_node **a_list);
+void	rb(t_node **b_list);
+void	rr(t_node **a_list, t_node **b_list);
+void	rra(t_node **a_list);
 
 #endif
