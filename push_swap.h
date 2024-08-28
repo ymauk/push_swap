@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/27 18:27:58 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/28 10:57:01 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,10 @@ void	ra(t_node **a_list);
 void	rb(t_node **b_list);
 void	rr(t_node **a_list, t_node **b_list);
 void	rra(t_node **a_list);
+
+//start_sorting
+void	start_sorting(t_node *a_list, t_node *b_list, int size_a);
+void	sort_size_2(t_node *a_list);
+// void	sort_size_3(t_node *a_list);
 
 #endif
