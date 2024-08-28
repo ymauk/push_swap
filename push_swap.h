@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/28 11:59:25 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/28 17:40:47 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,14 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
+typedef struct s_vars
+{
+	int				min_a;
+	int				max_a;
+	int				max_b;
+	int				min_b;
+}	t_vars;
+
 //parsing
 t_node	*parsing1(t_node *a_list, int argc, char **argv);
 char	**parsing2(char **argv, int size);
@@ -51,6 +59,10 @@ void	ft_lstadd_back_ps(t_node **lst, t_node *new);
 t_node	*ft_lstnew_ps(int *content);
 int		ft_lstsize_ps(t_node *lst);
 void	ft_lstadd_front_ps(t_node **lst, t_node *new);
+void	ft_min_max_a(t_node **lst, t_vars *sets);
+
+//help_node2
+void	ft_min_max_b(t_node **lst, t_vars *sets);
 
 //checking_string
 void	check_string(char **string);
@@ -78,5 +90,7 @@ void	rra(t_node **a_list);
 void	start_sorting(t_node **a_list, t_node **b_list, int size_a);
 void	sort_size_2(t_node **_list);
 void	sort_size_3(t_node **a_list);
+void	main_sort(t_node **a_list, t_node **b_list);
+int		find_closest_number(t_node **a_list, t_node **b_list, t_vars *sets);
 
 #endif

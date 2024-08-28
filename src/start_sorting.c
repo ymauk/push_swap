@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/28 13:23:38 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/28 17:49:26 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	start_sorting(t_node **a_list, t_node **b_list, int size_a)
 {
 	if (size_a == 2)
 		sort_size_2(a_list);
-	if (size_a == 3)
+	else if (size_a == 3)
 		sort_size_3(a_list);
-	b_list = NULL;
+	else
+		main_sort(a_list, b_list);
 }
 
 void	sort_size_2(t_node **a_list)
@@ -52,12 +53,57 @@ void	sort_size_3(t_node **a_list)
 		ra (a_list);
 		sa(a_list);
 	}
-    printf("Liste nach Operation:\n");
+}
 
+void	main_sort(t_node **a_list, t_node **b_list)
+{
+	t_vars	sets;
+
+	ft_min_max_a(a_list, &sets);
+	pb(b_list, a_list);
+	pb(b_list, a_list);
+	pb(b_list, a_list);
+	printf("Liste a_list:\n");
     t_node *temp = *a_list;
     while (temp != NULL)
     {
-        printf("list danach: %d\n", temp->data);
+        printf("a_list: %d\n", temp->data);
         temp = temp->next;
     }
+	printf("Liste b_list:\n");
+	t_node *temp_b = *b_list;
+    while (temp_b != NULL)
+    {
+        printf("b_list: %d\n", temp_b->data);
+        temp_b = temp_b->next;
+    }
+	int	nbr = find_closest_number(a_list, b_list, &sets);
+	printf("closest number: %d\n", nbr);
+}
+
+int	find_closest_number(t_node **a_list, t_node **b_list, t_vars *sets)
+{
+	int		min_delta;
+	int		closest_number;
+	t_node	*temp_b;
+
+	temp_b = *b_list;
+	closest_number = -1;
+	min_delta = INT_MAX;
+	while (temp_b != NULL)
+	{
+		ft_min_max_b(&temp_b, sets);
+		if (temp_b->data == sets->min_a)
+			closest_number = sets->max_b;
+		else if (temp_b->data < (*a_list)->data)
+		{
+			if (((*a_list)->data - temp_b->data) < min_delta)
+			{
+				min_delta = ((*a_list)->data - temp_b->data);
+				closest_number = temp_b->data;
+			}
+		}
+		temp_b = temp_b->next;
+	}
+	return (closest_number);
 }
