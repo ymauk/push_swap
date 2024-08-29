@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/28 17:40:47 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/29 15:26:31 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,9 @@ void	start_sorting(t_node **a_list, t_node **b_list, int size_a);
 void	sort_size_2(t_node **_list);
 void	sort_size_3(t_node **a_list);
 void	main_sort(t_node **a_list, t_node **b_list);
-int		find_closest_number(t_node **a_list, t_node **b_list, t_vars *sets);
+
+//rotating
+void	rotation(t_node **a_list, t_node **b_list, t_vars *sets);
+int		find_closest_number(int a_value, t_node **b_list, t_vars *sets);
 
 #endif
