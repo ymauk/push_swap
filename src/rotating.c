@@ -6,41 +6,55 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:13:23 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/29 16:41:26 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/30 14:18:57 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rotation(t_node **a_list, t_node **b_list, t_vars *sets)
+void	find(t_vars *sets)
 {
-	int	closest_nbr;
-	int	rotations_up[ft_lstsize_ps(a_list)];
+	int	min;
 
-	ft_min_max_b(b_list, sets);
-	// printf("max_b: %d\n", sets->max_b);
-	// printf("min_a: %d\n", sets->min_a);
-	if ((*a_list)->data == sets->min_a)
-		closest_nbr = sets->max_b;
-	else
-		closest_nbr = find_closest_number((*a_list)->data, b_list, sets);
-	// printf("closest number: %d\n", closest_nbr);
-	count_rotating_up_a(a_list,  )
-
+	min = sets->min_a;
+	printf("arrived");
 }
 
-int	count_rotating_up_a(t_node a_list, int a_value)
+void	find_cheapest_rotation(t_node *a_list, t_node *b_list, t_vars *sets)
 {
-	
+	printf("end\n");
+	t_node	*temp_a;
+	int		closest_nbr;
+	int		spot_in_a;
+	int		nbr_rotations;
+
+	temp_a = a_list;
+	spot_in_a = 0;
+	while (temp_a != NULL)
+	{
+		ft_min_max_b(b_list, sets);
+		if (temp_a->data == sets->min_a)
+			closest_nbr = sets->max_b;
+		else
+			closest_nbr = find_closest_number(temp_a->data, b_list, sets);
+		if (spot_in_a <= (ft_lstsize_ps(a_list) / 2))
+			nbr_rotations = spot_in_a;
+		else
+			nbr_rotations = (ft_lstsize_ps(a_list) - spot_in_a);
+			// nbr_rotations = (spot_in_a - (ft_lstsize_ps(a_list) / 2));
+		printf("spot and nbr of rotations up: %d in a_list: %d closest number: %d nbr of rotations: %d\n", spot_in_a, temp_a->data, closest_nbr, nbr_rotations);
+		spot_in_a++;
+		temp_a = temp_a->next;
+	}
 }
 
-int	find_closest_number(int a_value, t_node **b_list, t_vars *sets)
+int	find_closest_number(int a_value, t_node *b_list, t_vars *sets)
 {
 	int		min_delta;
 	int		closest_number;
 	t_node	*temp_b;
 
-	temp_b = *b_list;
+	temp_b = b_list;
 	closest_number = -1;
 	min_delta = INT_MAX;
 	while (temp_b != NULL)
@@ -59,3 +73,8 @@ int	find_closest_number(int a_value, t_node **b_list, t_vars *sets)
 	}
 	return (closest_number);
 }
+
+// int	count_rotating_up_a(t_node a_list, int a_value)
+// {
+	
+// }

@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:38:40 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/28 17:39:57 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/30 12:47:07 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,11 @@ int	ft_lstsize_ps(t_node *lst)
 }
 
 // finding the min and max elenent of the list a
-void	ft_min_max_a(t_node **lst, t_vars *sets)
+void	ft_min_max_a(t_node *lst, t_vars *sets)
 {
 	t_node	*temp;
 
-	temp = *lst;
+	temp = lst;
 	sets->max_a = temp->data;
 	sets->min_a = temp->data;
 	while (temp != NULL)

@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/29 15:54:31 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/08/30 13:23:38 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,12 @@ void	sort_size_3(t_node **a_list)
 void	main_sort(t_node **a_list, t_node **b_list)
 {
 	t_vars	sets;
+	// t_node	*cheapest_rotation;
 
-	ft_min_max_a(a_list, &sets);
+	beginsize_a(*a_list, &sets);
+	ft_min_max_a(*a_list, &sets);
 	pb(b_list, a_list);
 	pb(b_list, a_list);
-	rotation(a_list, b_list, &sets);
 	printf("Liste a_list nach operation:\n");
 	t_node *temp = *a_list;
 	while (temp != NULL)
@@ -77,4 +78,28 @@ void	main_sort(t_node **a_list, t_node **b_list)
 		printf("%d\n", temp_b->data);
 		temp_b = temp_b->next;
 	}
+	printf("start\n");
+	find_cheapest_rotation(*a_list, *b_list, &sets);
+	printf("end\n");
 }
+
+int	a_list_unsorted(t_node *a_list)
+{
+	t_node	*current_a;
+
+	current_a = a_list;
+	while (current_a != NULL && current_a->next != NULL)
+	{
+		if (current_a->data > current_a->next->data)
+			return (1);
+		current_a = current_a->next;
+	}
+	return (0);
+}
+
+	// while ((a_list_unsorted(a_list)) && (ft_lstsize_ps(a_list) != sets.size_a))
+	// {
+	// while (ft_lstsize_ps(a_list != 3))
+	// {
+	// }
+	// }
