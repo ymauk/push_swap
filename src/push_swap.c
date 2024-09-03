@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:00:45 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/29 15:53:48 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/03 17:36:58 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,3 @@ int	main(int argc, char **argv)
 	start_sorting(&a_list, &b_list, ft_lstsize_ps(a_list));
 	return (0);
 }
-
-//   printf("Liste nach Operation:\n");
-
-//     t_node *temp = *a_list;
-//     while (temp != NULL)
-//     {
-//         printf("list danach: %d\n", temp->data);
-//         temp = temp->next;
-//     }

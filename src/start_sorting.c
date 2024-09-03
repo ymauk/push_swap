@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/30 13:23:38 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/03 18:48:45 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,29 +58,30 @@ void	sort_size_3(t_node **a_list)
 void	main_sort(t_node **a_list, t_node **b_list)
 {
 	t_vars	sets;
-	// t_node	*cheapest_rotation;
 
 	beginsize_a(*a_list, &sets);
 	ft_min_max_a(*a_list, &sets);
 	pb(b_list, a_list);
 	pb(b_list, a_list);
-	printf("Liste a_list nach operation:\n");
+	while (ft_lstsize_ps(*a_list) != 3)
+	{
+		find_cheapest_rotation(*a_list, *b_list, &sets);
+		execute_rotation(a_list, b_list, &sets);
+	}
 	t_node *temp = *a_list;
+	t_node *temp_b = *b_list;
+	printf("Liste a_list nach operation:\n");
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->data);
 		temp = temp->next;
 	}
 	printf("Liste b_list nach operation:\n");
-	t_node *temp_b = *b_list;
 	while (temp_b != NULL)
 	{
 		printf("%d\n", temp_b->data);
 		temp_b = temp_b->next;
 	}
-	printf("start\n");
-	find_cheapest_rotation(*a_list, *b_list, &sets);
-	printf("end\n");
 }
 
 int	a_list_unsorted(t_node *a_list)

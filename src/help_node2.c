@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:30:34 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/30 12:57:59 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/03 18:39:45 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,16 @@ void	beginsize_a(t_node *lst, t_vars *sets)
 		sets->size_a++;
 		lst = lst->next;
 	}
+}
+
+// find last node of list
+t_node	*ft_lstlast_ps(t_node *lst)
+{
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != 0)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

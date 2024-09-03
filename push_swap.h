@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/30 13:19:28 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/03 19:03:52 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ typedef struct s_vars
 	int				max_b;
 	int				min_b;
 	int				size_a;
+	int				cheapest_rtt;
+	int				cheapest_rtt_a;
+	int				cheapest_rtt_b;
 }	t_vars;
 
 //parsing
@@ -65,6 +68,7 @@ void	ft_min_max_a(t_node *lst, t_vars *sets);
 //help_node2
 void	ft_min_max_b(t_node *lst, t_vars *sets);
 void	beginsize_a(t_node *lst, t_vars *sets);
+t_node	*ft_lstlast_ps(t_node *lst);
 
 //checking_string
 void	check_string(char **string);
@@ -87,6 +91,7 @@ void	ra(t_node **a_list);
 void	rb(t_node **b_list);
 void	rr(t_node **a_list, t_node **b_list);
 void	rra(t_node **a_list);
+void	rrb(t_node **b_list);
 
 //start_sorting
 void	start_sorting(t_node **a_list, t_node **b_list, int size_a);
@@ -97,7 +102,9 @@ int		a_list_unsorted(t_node *a_list);
 
 //rotating
 void	find_cheapest_rotation(t_node *a_list, t_node *b_list, t_vars *sets);
-int		find_closest_number(int a_value, t_node *b_list, t_vars *sets);
-void	find(t_vars *sets);
+int		cheapest_rtt_b(t_node *b_list, int closest_nbr);
+int		find_closest_number(int a_value, t_node *b_list);
+void	cmp_rtt(int cheapest_a, int cheapest_b, t_vars *sets);
+void	execute_rotation(t_node **a_list, t_node **b_list, t_vars *sets);
 
 #endif
