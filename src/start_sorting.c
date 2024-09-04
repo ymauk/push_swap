@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/03 18:48:45 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/04 18:02:41 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ void	main_sort(t_node **a_list, t_node **b_list)
 		find_cheapest_rotation(*a_list, *b_list, &sets);
 		execute_rotation(a_list, b_list, &sets);
 	}
+	sort_size_3(a_list);
+	while (ft_lstsize_ps(*a_list) != sets.size_a)
+	{
+		find_cheapest_rotation2(*a_list, *b_list, &sets);
+		push_to_a(a_list, b_list, &sets);
+	}
+	// while (a_list_unsorted(*a_list) && (ft_lstsize_ps(*a_list) != sets.size_a))
 	t_node *temp = *a_list;
 	t_node *temp_b = *b_list;
 	printf("Liste a_list nach operation:\n");

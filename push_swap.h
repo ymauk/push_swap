@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/03 19:03:52 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/04 17:56:17 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ t_node	*create_list(char **str, t_node *a_list);
 //help
 int		counting_size(int argc, char **argv);
 long	ft_atol(const char *str);
+int		min(int cheapest_a, int cheapest_b);
+int		max(int cheapest_a, int cheapest_b);
+int		abs(int n);
 
 //help_node
 void	ft_lstadd_back_ps(t_node **lst, t_node *new);
@@ -93,6 +96,9 @@ void	rr(t_node **a_list, t_node **b_list);
 void	rra(t_node **a_list);
 void	rrb(t_node **b_list);
 
+//operations3
+void	rrr(t_node **a_list, t_node **b_list);
+
 //start_sorting
 void	start_sorting(t_node **a_list, t_node **b_list, int size_a);
 void	sort_size_2(t_node **_list);
@@ -102,9 +108,19 @@ int		a_list_unsorted(t_node *a_list);
 
 //rotating
 void	find_cheapest_rotation(t_node *a_list, t_node *b_list, t_vars *sets);
+void	find_cheapest_rotation2(t_node *a_list, t_node *b_list, t_vars *sets);
 int		cheapest_rtt_b(t_node *b_list, int closest_nbr);
 int		find_closest_number(int a_value, t_node *b_list);
-void	cmp_rtt(int cheapest_a, int cheapest_b, t_vars *sets);
+int		find_closest_number2(int b_value, t_node *a_list);
+
+//rotating2
 void	execute_rotation(t_node **a_list, t_node **b_list, t_vars *sets);
+void	execute_rotation2(t_node **a_list, t_node **b_list, t_vars *sets);
+void	execute_rotation3(t_node **a_list, t_vars *sets);
+void	execute_rotation4(t_node **b_list, t_vars *sets);
+void	push_to_a(t_node **a_list, t_node **b_list, t_vars *sets);
+
+//rotating3
+void	cmp_rtt(int cheapest_a, int cheapest_b, t_vars *sets);
 
 #endif

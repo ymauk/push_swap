@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:38:40 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/03 18:22:59 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/04 16:12:04 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_lstadd_back_ps(t_node **lst, t_node *new)
 	t_node	*ptr;
 
 	ptr = *lst;
-	// printf("lst back: %d\n", ptr->data);
 	if (lst == NULL)
 		return ;
 	if (ptr == 0)

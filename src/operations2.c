@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:02:18 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/03 19:05:37 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/04 09:30:34 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	rb(t_node **b_list)
 	temp = *b_list;
 	*b_list = (*b_list)->next;
 	temp->next = NULL;
-	printf("rb first: %d\n", (*b_list)->data);
 	ft_lstadd_back_ps(b_list, temp);
 	ft_printf("rb\n");
 	// t_node  *first;
