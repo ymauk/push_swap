@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:30:34 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/04 10:35:26 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:42:15 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,22 @@ t_node	*ft_lstlast_ps(t_node *lst)
 		lst = lst->next;
 	}
 	return (lst);
+}
+
+// find the min out of two values
+int	min(int cheapest_a, int cheapest_b)
+{
+	if (cheapest_a < cheapest_b)
+		return (cheapest_a);
+	else
+		return (cheapest_b);
+}
+
+// find the max out of two values
+int	max(int cheapest_a, int cheapest_b)
+{
+	if (cheapest_a > cheapest_b)
+		return (cheapest_a);
+	else
+		return (cheapest_b);
 }

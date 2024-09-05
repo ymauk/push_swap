@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/04 17:56:17 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:42:33 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ t_node	*create_list(char **str, t_node *a_list);
 //help
 int		counting_size(int argc, char **argv);
 long	ft_atol(const char *str);
-int		min(int cheapest_a, int cheapest_b);
-int		max(int cheapest_a, int cheapest_b);
 int		abs(int n);
 
 //help_node
@@ -72,6 +70,8 @@ void	ft_min_max_a(t_node *lst, t_vars *sets);
 void	ft_min_max_b(t_node *lst, t_vars *sets);
 void	beginsize_a(t_node *lst, t_vars *sets);
 t_node	*ft_lstlast_ps(t_node *lst);
+int		min(int cheapest_a, int cheapest_b);
+int		max(int cheapest_a, int cheapest_b);
 
 //checking_string
 void	check_string(char **string);
@@ -122,5 +122,6 @@ void	push_to_a(t_node **a_list, t_node **b_list, t_vars *sets);
 
 //rotating3
 void	cmp_rtt(int cheapest_a, int cheapest_b, t_vars *sets);
+void	sort_a(t_node *a_list, t_vars *sets);
 
 #endif

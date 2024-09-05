@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/04 18:02:41 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:38:53 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,22 +72,13 @@ void	main_sort(t_node **a_list, t_node **b_list)
 	while (ft_lstsize_ps(*a_list) != sets.size_a)
 	{
 		find_cheapest_rotation2(*a_list, *b_list, &sets);
-		push_to_a(a_list, b_list, &sets);
+		execute_rotation3(a_list, &sets);
+		pa(a_list, b_list);
 	}
-	// while (a_list_unsorted(*a_list) && (ft_lstsize_ps(*a_list) != sets.size_a))
-	t_node *temp = *a_list;
-	t_node *temp_b = *b_list;
-	printf("Liste a_list nach operation:\n");
-	while (temp != NULL)
+	if (a_list_unsorted(*a_list))
 	{
-		printf("%d\n", temp->data);
-		temp = temp->next;
-	}
-	printf("Liste b_list nach operation:\n");
-	while (temp_b != NULL)
-	{
-		printf("%d\n", temp_b->data);
-		temp_b = temp_b->next;
+		sort_a(*a_list, &sets);
+		execute_rotation3(a_list, &sets);
 	}
 }
 
@@ -105,9 +96,17 @@ int	a_list_unsorted(t_node *a_list)
 	return (0);
 }
 
-	// while ((a_list_unsorted(a_list)) && (ft_lstsize_ps(a_list) != sets.size_a))
+	// t_node *temp = *a_list;
+	// t_node *temp_b = *b_list;
+	// printf("Liste a_list nach operation:\n");
+	// while (temp != NULL)
 	// {
-	// while (ft_lstsize_ps(a_list != 3))
-	// {
+	// 	printf("%d\n", temp->data);
+	// 	temp = temp->next;
 	// }
+	// printf("Liste b_list nach operation:\n");
+	// while (temp_b != NULL)
+	// {
+	// 	printf("%d\n", temp_b->data);
+	// 	temp_b = temp_b->next;
 	// }

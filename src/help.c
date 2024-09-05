@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 12:19:09 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/04 13:00:46 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:43:11 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,24 +60,6 @@ long	ft_atol(const char *str)
 	return (sign * result);
 }
 
-// find the min out of two values
-int	min(int cheapest_a, int cheapest_b)
-{
-	if (cheapest_a < cheapest_b)
-		return (cheapest_a);
-	else
-		return (cheapest_b);
-}
-
-// find the max out of two values
-int	max(int cheapest_a, int cheapest_b)
-{
-	if (cheapest_a > cheapest_b)
-		return (cheapest_a);
-	else
-		return (cheapest_b);
-}
-
 // calculate the absolut
 int	abs(int n)
 {
@@ -85,4 +67,9 @@ int	abs(int n)
 		return (n * -1);
 	else
 		return (n);
+}
+
+free_all(t_node a_list, t_node b_list)
+{
+	
 }

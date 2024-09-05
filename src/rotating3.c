@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:21:41 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/04 18:03:33 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:37:52 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,27 @@ void	cmp_rtt(int chp_a, int chp_b, t_vars *sets)
 		sets->cheapest_rtt_a = chp_a;
 		sets->cheapest_rtt_b = chp_b;
 	}
+}
+
+void	sort_a(t_node *a_list, t_vars *sets)
+{
+	t_node	*temp_a;
+	int		spot_in_a;
+	int		nbr_rotations;
+
+	temp_a = a_list;
+	spot_in_a = 0;
+	ft_min_max_a(temp_a, sets);
+	while (temp_a != NULL)
+	{
+		if (temp_a->data == sets->min_a)
+			break ;
+		spot_in_a++;
+		temp_a = temp_a->next;
+	}
+	if (spot_in_a <= sets->size_a / 2)
+		nbr_rotations = spot_in_a;
+	else
+		nbr_rotations = ((sets->size_a - spot_in_a) * -1);
+	sets->cheapest_rtt_a = nbr_rotations;
 }
