@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:02:18 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 12:51:33 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 18:16:37 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,17 @@ void	rb(t_node **b_list)
 
 void	rr(t_node **a_list, t_node **b_list)
 {
-	t_node	*temp_a;
-	t_node	*temp_b;
+	t_node	*temp;
 
-	temp_a = *a_list;
+	temp = *a_list;
 	*a_list = (*a_list)->next;
-	temp_a->next = NULL;
-	ft_lstadd_back_ps(a_list, temp_a);
-	temp_b = *b_list;
+	temp->next = NULL;
+	ft_lstadd_back_ps(a_list, temp);
+	temp = *b_list;
 	*b_list = (*b_list)->next;
-	temp_b->next = NULL;
-	ft_lstadd_back_ps(b_list, temp_b);
-	printf("rr\n");
+	temp->next = NULL;
+	ft_lstadd_back_ps(b_list, temp);
+	ft_printf("rr\n");
 }
 
 void	rra(t_node **a_list)

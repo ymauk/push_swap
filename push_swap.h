@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 10:54:58 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 12:57:49 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_node	*create_list(char **str, t_node *a_list);
 int		counting_size(char **argv, int argc);
 long	ft_atol(const char *str);
 int		abs(int n);
-void	free_all(t_node *a_list);
+void	free_all_list(t_node *a_list);
 
 //help_node
 void	ft_lstadd_back_ps(t_node **lst, t_node *new);
@@ -74,6 +74,7 @@ int		min(int cheapest_a, int cheapest_b);
 int		max(int cheapest_a, int cheapest_b);
 
 //checking_string
+void	single_nbr(char **str);
 void	check_string(char **string);
 void	no_ints(char **str);
 void	duplicates(char **str);
@@ -81,6 +82,7 @@ void	size_int(char **str);
 
 //error_handling
 void	error_handling(char **str);
+void	ft_free_all(char **str);
 
 //operations
 void	sa(t_node **a_list);
@@ -121,6 +123,6 @@ void	execute_rotation4(t_node **b_list, t_vars *sets);
 
 //rotating3
 void	cmp_rtt(int cheapest_a, int cheapest_b, t_vars *sets);
-void	sort_a(t_node *a_list, t_vars *sets);
+void	sort_a(t_node **a_list, t_vars *sets);
 
 #endif

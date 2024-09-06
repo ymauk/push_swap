@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:49:17 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 17:28:02 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 13:25:31 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@ void	check_string(char **string)
 	no_ints(string);
 	duplicates(string);
 	size_int(string);
+	single_nbr(string);
+}
+
+void	single_nbr(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+		i++;
+	if (i == 1)
+	{
+		error_handling(str);
+	}
 }
 
 void	no_ints(char **str)

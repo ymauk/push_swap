@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:42:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 11:07:51 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 13:27:35 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	**parsing2(char **argv, int argc)
 		split_string = ft_split(argv[i], ' ');
 		parsing3(split_string, string, &j);
 		i++;
-		free (split_string);
+		ft_free_all(split_string);
 	}
 	i = 0;
 	return (string);
@@ -68,12 +68,7 @@ t_node	*create_list(char **str, t_node *a_list)
 		i++;
 	}
 	i = 0;
-	while (str[i] != NULL)
-	{
-		free(str[i]);
-		i++;
-	}
-	free (str);
+	ft_free_all(str);
 	return (a_list);
 }
 

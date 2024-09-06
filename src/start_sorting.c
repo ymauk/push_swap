@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 12:38:53 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 17:17:58 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,15 @@ void	main_sort(t_node **a_list, t_node **b_list)
 	ft_min_max_a(*a_list, &sets);
 	pb(b_list, a_list);
 	pb(b_list, a_list);
-	while (ft_lstsize_ps(*a_list) != 3)
+	while (ft_lstsize_ps(*a_list) > 3)
 	{
 		find_cheapest_rotation(*a_list, *b_list, &sets);
 		execute_rotation(a_list, b_list, &sets);
 	}
-	sort_size_3(a_list);
+	if ((ft_lstsize_ps(*a_list) == 2) && (ft_lstsize_ps(*b_list) == 2))
+		sort_size_2(a_list);
+	else
+		sort_size_3(a_list);
 	while (ft_lstsize_ps(*a_list) != sets.size_a)
 	{
 		find_cheapest_rotation2(*a_list, *b_list, &sets);
@@ -76,10 +79,7 @@ void	main_sort(t_node **a_list, t_node **b_list)
 		pa(a_list, b_list);
 	}
 	if (a_list_unsorted(*a_list))
-	{
-		sort_a(*a_list, &sets);
-		execute_rotation3(a_list, &sets);
-	}
+		sort_a(a_list, &sets);
 }
 
 int	a_list_unsorted(t_node *a_list)
@@ -96,17 +96,33 @@ int	a_list_unsorted(t_node *a_list)
 	return (0);
 }
 
-	// t_node *temp = *a_list;
-	// t_node *temp_b = *b_list;
+	// printf("start phase 1:\n");
 	// printf("Liste a_list nach operation:\n");
+	// temp = *a_list;
 	// while (temp != NULL)
 	// {
 	// 	printf("%d\n", temp->data);
 	// 	temp = temp->next;
 	// }
+	// temp_b = *b_list;
 	// printf("Liste b_list nach operation:\n");
 	// while (temp_b != NULL)
 	// {
 	// 	printf("%d\n", temp_b->data);
 	// 	temp_b = temp_b->next;
 	// }
+	// printf("start phase 2:\n");
+// 	printf("Liste a_list nach operation:\n");
+// 	t_node *temp = *a_list;
+// 	while (temp != NULL)
+// 	{
+// 		printf("%d\n", temp->data);
+// 		temp = temp->next;
+// 	}
+// 	t_node *temp_b = *b_list;
+// 	printf("Liste b_list nach operation:\n");
+// 	while (temp_b != NULL)
+// 	{
+// 		printf("%d\n", temp_b->data);
+// 		temp_b = temp_b->next;
+// 	}

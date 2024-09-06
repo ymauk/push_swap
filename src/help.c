@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 12:19:09 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 10:43:58 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 11:42:31 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	counting_size(char **argv, int argc)
 				counter++;
 				j++;
 			}
-			free (split);
+			ft_free_all(split);
 		}
 		i++;
 	}
@@ -77,7 +77,7 @@ int	abs(int n)
 		return (n);
 }
 
-void	free_all(t_node *a_list)
+void	free_all_list(t_node *a_list)
 {
 	t_node	*temp;
 

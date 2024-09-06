@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:46:09 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 12:50:56 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 13:24:43 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,17 @@ void	error_handling(char **str)
 	free (str);
 	ft_printf("%sError\n%s", R, DC);
 	exit (0);
+}
+
+void	ft_free_all(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
+	free (str);
 }
