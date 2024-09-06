@@ -22,7 +22,7 @@ $(NAME): $(OBJS)
 	@echo $(P)"Compiling printf...\n"$(DC)
 	@cd $(PRINTF) && $(MAKE) --silent
 	@echo $(G)"Compiling push_swap..."$(DC)
-	@cc $(OBJS) $(INLIBFT) $(INPRINTF) -o $(NAME) -fsanitize=address
+	@cc $(OBJS) $(INLIBFT) $(INPRINTF) -o $(NAME)
 
 all: $(NAME)
 

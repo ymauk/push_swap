@@ -6,72 +6,48 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:42:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 17:14:42 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 11:07:51 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	allocate_and_copy(char **split_string, char **temp_split, int j)
+char	**parsing3(char **split_string, char **string, int	*j)
 {
 	int	i;
 
 	i = 0;
-	while (temp_split[i] != NULL)
+	while (split_string[i] != NULL)
 	{
-		split_string[j] = ft_strdup(temp_split[i]);
-		if (!split_string[j])
-		{
-			while (j > 0)
-				free(split_string[--j]);
-			free(split_string);
-			while (temp_split[i] != NULL)
-				free(temp_split[i++]);
-			free(temp_split);
-			return (-1);
-		}
-		j++;
+		string[*j] = ft_strdup(split_string[i]);
+		(*j)++;
 		i++;
 	}
-	return (j);
+	return (split_string);
 }
 
-char	**parsing3(int argc, char **argv)
+char	**parsing2(char **argv, int argc)
 {
 	char	**split_string;
-	char	**temp_split;
+	char	**string;
+	int		size;
 	int		i;
 	int		j;
 
-	split_string = (char **)malloc(((argc - 1) + 1) * sizeof(char *));
-	if (!split_string)
-		return (NULL);
 	i = 1;
 	j = 0;
+	size = counting_size(argv, argc);
+	string = (char **) malloc((size + 1) * sizeof(char *));
+	string[size] = NULL;
 	while (i < argc)
 	{
-		temp_split = ft_split(argv[i++], ' ');
-		if (!temp_split)
-			return (free(split_string), NULL);
-		j = allocate_and_copy(split_string, temp_split, j);
-		if (j == -1)
-			return (NULL);
-		free(temp_split);
+		split_string = ft_split(argv[i], ' ');
+		parsing3(split_string, string, &j);
+		i++;
+		free (split_string);
 	}
-	split_string[j] = NULL;
-	return (split_string);
-}
-
-char	**parsing2(char **argv, int size)
-{
-	char	**split_string;
-
-	split_string = (char **)malloc((size + 1) * sizeof(char *));
-	if (!split_string)
-		return (NULL);
-	split_string = ft_split(argv[1], ' ');
-	split_string[size] = NULL;
-	return (split_string);
+	i = 0;
+	return (string);
 }
 
 t_node	*create_list(char **str, t_node *a_list)
@@ -91,25 +67,21 @@ t_node	*create_list(char **str, t_node *a_list)
 			ft_lstadd_back_ps(&a_list, new_node);
 		i++;
 	}
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
 	free (str);
 	return (a_list);
 }
 
-// if (argc == 2 && ft_strchr(argv[1], ' ') -> is used if argument is in ""
-// else if (argc > 2)               -> is used by multiple singel arguments
-
 t_node	*parsing1(t_node *a_list, int argc, char **argv)
 {
 	char	**string;
-	int		size;
 
-	size = counting_size(argc, argv);
-	if (argc == 2 && ft_strchr(argv[1], ' ') != NULL)
-		string = parsing2(argv, size);
-	else if (argc > 2)
-		string = parsing3(argc, argv);
-	else
-		exit(0);
+	string = parsing2(argv, argc);
 	check_string(string);
 	return (create_list(string, a_list));
 }

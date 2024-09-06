@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:02:18 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/04 09:30:34 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:51:33 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,6 @@ void	rb(t_node **b_list)
 	temp->next = NULL;
 	ft_lstadd_back_ps(b_list, temp);
 	ft_printf("rb\n");
-	// t_node  *first;
-    // t_node  *second;
-    // t_node  *last;
-    // if (*b_list)
-    // {
-    //     first = *b_list;
-    //     if (first->next)
-    //     {
-    //         second = first->next;
-    //         last = ft_lstlast_ps(first);
-    //         last->next = first;
-    //         first->next = NULL;
-    //         *b_list = second;
-    //     }
-    // }
-    // ft_printf("rb\n");
 }
 
 void	rr(t_node **a_list, t_node **b_list)

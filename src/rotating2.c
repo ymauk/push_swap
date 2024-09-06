@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:07:37 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 11:19:24 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:53:03 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,25 +81,3 @@ void	execute_rotation4(t_node **b_list, t_vars *sets)
 		}
 	}
 }
-
-// void	push_to_a(t_node **a_list, t_node **b_list, t_vars *sets)
-// {
-// 	printf("sets cheapest rtt a: %d\n", sets->cheapest_rtt_a);
-// 	if (sets->cheapest_rtt_a < 0)
-// 	{
-// 		while (sets->cheapest_rtt_a < 0)
-// 		{
-// 			rra(a_list);
-// 			sets->cheapest_rtt_a++;
-// 		}
-// 	}
-// 	if (sets->cheapest_rtt_a > 0)
-// 	{
-// 		while (sets->cheapest_rtt_a > 0)
-// 		{
-// 			ra(a_list);
-// 			sets->cheapest_rtt_a--;
-// 		}
-// 	}
-// 	pa(a_list, b_list);
-// }

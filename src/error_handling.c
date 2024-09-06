@@ -6,14 +6,11 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:46:09 by ymauk             #+#    #+#             */
-/*   Updated: 2024/08/23 14:33:47 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:50:56 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-//free funktion die alles bisher erbrachte freed
-//inklusive exit welche die Funktion beendet
 
 void	error_handling(char **str)
 {

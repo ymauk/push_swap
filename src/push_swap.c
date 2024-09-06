@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:00:45 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 12:40:39 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 10:36:48 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (ft_printf("%sWrong amount of arguments!\n%s", R, DC));
 	a_list = parsing1(a_list, argc, argv);
-	start_sorting(&a_list, &b_list, ft_lstsize_ps(a_list));
-	free_all(a_list, b_list);
+	// start_sorting(&a_list, &b_list, ft_lstsize_ps(a_list));
+	// free_all(a_list);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:13:23 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 12:13:40 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:52:52 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,8 @@ void	find_cheapest_rotation2(t_node *a_list, t_node *b_list, t_vars *sets)
 		else
 			closest_nbr = find_closest_number2(temp_b->data, a_list);
 		nbr_rotation = cheapest_rtt_b(a_list, closest_nbr);
-		// printf("number in a_list: %d, closest nbr: %d\n", temp_b->data, closest_nbr);
-		// printf("spot: %d\n", nbr_rotation);
 		if (abs(nbr_rotation) < sets->cheapest_rtt_a)
 			sets->cheapest_rtt_a = nbr_rotation;
-		// printf("sets cheapest rotation: %d\n", sets->cheapest_rtt_a);
 		temp_a = temp_a->next;
 	}
 }
@@ -130,36 +127,3 @@ int	find_closest_number2(int b_value, t_node *a_list)
 	}
 	return (closest_number);
 }
-
-
-// void	find_cheapest_rotation2(t_node *a_list, t_node *b_list, t_vars *sets)
-// {
-// 	t_node	*temp_a;
-// 	t_node	*temp_b;
-// 	int		closest_nbr;
-// 	int		spot_in_a;
-// 	int		nbr_rotations;
-
-// 	temp_a = a_list;
-// 	temp_b = b_list;
-// 	spot_in_a = 0;
-// 	while (temp_a != NULL)
-// 	{
-// 		ft_min_max_a(a_list, sets);
-// 		if (temp_b->data > sets->max_a)
-// 			closest_nbr = sets->min_a;
-// 		else
-// 			closest_nbr = find_closest_number2(temp_b->data, a_list);
-// 		if (temp_a->data == closest_nbr)
-// 		{
-// 			if (spot_in_a <= (ft_lstsize_ps(a_list) / 2))
-// 				nbr_rotations = spot_in_a;
-// 			else
-// 				nbr_rotations = (ft_lstsize_ps(a_list) - spot_in_a) * -1;
-// 		}
-// 		printf("nbr rotations: %d\n", nbr_rotations);
-// 		if (abs(nbr_rotations) < sets->cheapest_rtt_a)
-// 			sets->cheapest_rtt_a = nbr_rotations;
-// 		temp_a = temp_a->next;
-// 	}
-// }

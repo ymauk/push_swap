@@ -6,28 +6,36 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 12:19:09 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 12:43:11 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 10:43:58 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	counting_size(int argc, char **argv)
+int	counting_size(char **argv, int argc)
 {
 	int		counter;
 	int		i;
+	int		j;
 	char	**split;
 
-	argc = 0;
 	counter = 0;
-	i = 0;
-	split = ft_split(argv[1], ' ');
-	while (split[i] != NULL)
+	i = 1;
+	while (i < argc)
 	{
+		split = ft_split(argv[i], ' ');
+		if (split != NULL)
+		{
+			j = 0;
+			while (split[j] != NULL)
+			{
+				counter++;
+				j++;
+			}
+			free (split);
+		}
 		i++;
-		counter++;
 	}
-	free (split);
 	return (counter);
 }
 
@@ -69,7 +77,16 @@ int	abs(int n)
 		return (n);
 }
 
-free_all(t_node a_list, t_node b_list)
+void	free_all(t_node *a_list)
 {
-	
+	t_node	*temp;
+
+	while (a_list != NULL)
+	{
+		temp = a_list->next;
+		free(a_list);
+		a_list = temp;
+	}
 }
+//free funktion die alles bisher erbrachte freed
+//inklusive exit welche die Funktion beendet

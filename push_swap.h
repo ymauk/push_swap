@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/05 12:42:33 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 10:54:58 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ typedef struct s_vars
 
 //parsing
 t_node	*parsing1(t_node *a_list, int argc, char **argv);
-char	**parsing2(char **argv, int size);
-char	**parsing3(int argc, char **argv);
-int		allocate_and_copy(char **split_string, char **temp_split, int j);
+char	**parsing2(char **argv, int argc);
+char	**parsing3(char **split_string, char **string, int	*j);
 t_node	*create_list(char **str, t_node *a_list);
 
 //help
-int		counting_size(int argc, char **argv);
+int		counting_size(char **argv, int argc);
 long	ft_atol(const char *str);
 int		abs(int n);
+void	free_all(t_node *a_list);
 
 //help_node
 void	ft_lstadd_back_ps(t_node **lst, t_node *new);
@@ -118,7 +118,6 @@ void	execute_rotation(t_node **a_list, t_node **b_list, t_vars *sets);
 void	execute_rotation2(t_node **a_list, t_node **b_list, t_vars *sets);
 void	execute_rotation3(t_node **a_list, t_vars *sets);
 void	execute_rotation4(t_node **b_list, t_vars *sets);
-void	push_to_a(t_node **a_list, t_node **b_list, t_vars *sets);
 
 //rotating3
 void	cmp_rtt(int cheapest_a, int cheapest_b, t_vars *sets);
