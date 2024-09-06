@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:35:42 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 12:57:49 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 18:37:33 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
 
 //colours
-
 # define B "\033[0;34m"
 # define P "\033[0;35m"
 # define R "\033[0;31m"
