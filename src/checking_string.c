@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:49:17 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/11 14:49:06 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/11 16:12:49 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,7 @@ void	single_nbr(char **str)
 		i++;
 	if (i == 1)
 	{
-		i = 0;
-		while (str[i] != NULL)
-		{
-			free(str[i]);
-			i++;
-		}
-		free (str);
+		ft_free_all(str);
 		exit (0);
 	}
 }

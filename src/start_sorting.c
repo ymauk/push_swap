@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/11 13:04:15 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/11 15:45:32 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	start_sorting(t_node **a_list, t_node **b_list, int size_a)
 		else
 			main_sort(a_list, b_list);
 	}
-	else
-		exit(0);
+	return ;
 }
 
 void	sort_size_2(t_node **a_list)
@@ -100,34 +99,3 @@ int	a_list_unsorted(t_node *a_list)
 	}
 	return (0);
 }
-
-	// printf("start phase 1:\n");
-	// printf("Liste a_list nach operation:\n");
-	// temp = *a_list;
-	// while (temp != NULL)
-	// {
-	// 	printf("%d\n", temp->data);
-	// 	temp = temp->next;
-	// }
-	// temp_b = *b_list;
-	// printf("Liste b_list nach operation:\n");
-	// while (temp_b != NULL)
-	// {
-	// 	printf("%d\n", temp_b->data);
-	// 	temp_b = temp_b->next;
-	// }
-	// printf("start phase 2:\n");
-// 	printf("Liste a_list nach operation:\n");
-// 	t_node *temp = *a_list;
-// 	while (temp != NULL)
-// 	{
-// 		printf("%d\n", temp->data);
-// 		temp = temp->next;
-// 	}
-// 	t_node *temp_b = *b_list;
-// 	printf("Liste b_list nach operation:\n");
-// 	while (temp_b != NULL)
-// 	{
-// 		printf("%d\n", temp_b->data);
-// 		temp_b = temp_b->next;
-// 	}
