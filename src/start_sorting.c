@@ -6,7 +6,7 @@
 /*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:29:56 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 17:17:58 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/11 13:04:15 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	start_sorting(t_node **a_list, t_node **b_list, int size_a)
 {
-	if (size_a == 2)
-		sort_size_2(a_list);
-	else if (size_a == 3)
-		sort_size_3(a_list);
+	if (a_list_unsorted(*a_list))
+	{
+		if (size_a == 2)
+			sort_size_2(a_list);
+		else if (size_a == 3)
+			sort_size_3(a_list);
+		else
+			main_sort(a_list, b_list);
+	}
 	else
-		main_sort(a_list, b_list);
+		exit(0);
 }
 
 void	sort_size_2(t_node **a_list)
