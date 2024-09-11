@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ymauk <ymauk@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:00:45 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 18:38:31 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/06 16:56:18 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ int	main(int argc, char **argv)
 
 	a_list = NULL;
 	b_list = NULL;
-	a_list = parsing1(a_list, argc, argv);
-	start_sorting(&a_list, &b_list, ft_lstsize_ps(a_list));
-	free_all_list(a_list);
+	if (argc != 1)
+	{
+		a_list = parsing1(a_list, argc, argv);
+		start_sorting(&a_list, &b_list, ft_lstsize_ps(a_list));
+		free_all_list(a_list);
+	}
 	return (0);
 }
