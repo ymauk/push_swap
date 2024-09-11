@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checking_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymauk <ymauk@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:49:17 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 16:59:11 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/11 14:49:06 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	single_nbr(char **str)
 			free(str[i]);
 			i++;
 		}
-	free (str);
-	exit (0);
+		free (str);
+		exit (0);
 	}
 }
 
