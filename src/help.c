@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   help.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymauk <ymauk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ymauk <ymauk@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 12:19:09 by ymauk             #+#    #+#             */
-/*   Updated: 2024/09/06 11:42:31 by ymauk            ###   ########.fr       */
+/*   Updated: 2024/09/11 14:24:42 by ymauk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,3 @@ void	free_all_list(t_node *a_list)
 		a_list = temp;
 	}
 }
-//free funktion die alles bisher erbrachte freed
-//inklusive exit welche die Funktion beendet
